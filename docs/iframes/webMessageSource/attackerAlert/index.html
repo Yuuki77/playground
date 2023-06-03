@@ -1,18 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Victim site</title>
+	<title>Attacker site to load cross domain vulnerable iframe</title>
 </head>
 <body>
 
 </body>
-<script>
-window.addEventListener('message', function(e) {
-  eval(e.data);
-});
-</script>
-
+<!-- there should not be no popup -->
+<iframe src="https://silky-catkin-niece.glitch.me" onload="this.contentWindow.postMessage('alert()','*')">
 </html>
